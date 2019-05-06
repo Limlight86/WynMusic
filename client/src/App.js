@@ -1,11 +1,11 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css'
-import SearchAlbum from './pages/SearchAlbum'
-import AlbumDetails from './pages/AlbumDetails'
-import Home from './pages/Home'
-import Collection from './pages/Collection'
-import Contact from './pages/Contact'
+import SearchAlbum from './page/SearchAlbum'
+import AlbumDetails from './page/AlbumDetails'
+import Home from './page/Home'
+import Collection from './page/Collection'
+import Contact from './page/Contact'
 
 
 class App extends React.Component {
