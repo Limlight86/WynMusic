@@ -1,0 +1,72 @@
+h1{
+  text-align: center;
+}
+
+input{
+margin-top: 0 auto;
+}
+
+#results{
+  width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    margin: 0 auto;
+  }
+  
+  .album{
+    display: grid;
+    place-items: center;
+  }
+
+.album h4{
+  text-align: center;
+}
+  
+  .album img {
+    object-fit: cover;
+    width: 150px;
+    height: 150px
+  }
+
+  body{
+    background-color: gray;
+    color: white;
+    text-align: center;
+  }
+
+  #search-button{
+    border-radius: 10px;
+    width: 200px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px;
+
+  }
+  textarea:focus, input:focus{
+    outline: none;
+  }
+
+    span{
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    }
+  span button{
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-right: 5px;
+    border-color: red;
+    padding: 5px 10px;
+    line-height: 10px;
+    cursor: pointer;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }

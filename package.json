@@ -5,10 +5,13 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^8.0.0",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "request": "^2.88.0"
   },
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "cd client && yarn && yarn run build"
-  }
+  },
+  "repository": "https://github.com/wyncode/C33_lazaro_adrian_stephanieh",
+  "author": "Laz <lquin008@gmail.com>"
 }
