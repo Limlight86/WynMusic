@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './SearchAlbum.css'
+import axios from 'axios'
 
 class SearchAlbum extends Component {
-  state = { albums: [],
+  state = {
+            albums: [],
             artistName: "",
-            addedAlbum: {}}
+            collection: []
+          }
+
+  componentDidMount(){
+    axios.get('/collection').then(response => this.setState({collection: response.data}))
+  }
 
   fetchAlbums = (event) => {
     fetch(`/search/${event.target.value}`)
@@ -15,13 +22,14 @@ class SearchAlbum extends Component {
       })
   }
 
-  // addCollection = (e) =>{
-  //               axios.post('/collection', addedAlbum)
-  //                   .then(response => {
-  //                       const {albumCollection} = state.props.addedAlbum
-  //                       albumCollection.push(response.data)
-  //                       this.setState({addedAlbum : })
-  // }}
+  addCollection = (album) =>{
+                axios.post('/collection', album)
+                  .then(response => {
+                    const { collection } = this.state
+                    collection.push(response.data)
+                    this.setState({ collection })
+                  })
+  }
 
   handleKeyDown = (e) => {
     if (e.key === 'Enter' && e.target.value.length > 0) {
@@ -45,10 +53,12 @@ class SearchAlbum extends Component {
                     <img src={album.images[1].url} alt="album-art"/>
                     <span>
                       {console.log(album)}
-                    <button onClick={this.addCollection}>
-                      <Link to={`/collection`} 
-                      target="_blank" >Add</Link>
-                    </button>
+                    {
+                      !this.state.collection.map(album => album.id).includes(album.id) &&
+                      <button onClick={ () => { this.addCollection(album) }}>
+                        Add
+                      </button>
+                    }
                     <button><Link to={`/album/detail/?id=${album.id}`} target="_blank">Details</Link></button>
                     </span>
                   </div>

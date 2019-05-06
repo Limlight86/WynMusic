@@ -10,7 +10,6 @@ app.use(express.static('public'))
 const req = require('request') //required request to perform http requests to the api, named req because there are more than 1 request param/variable
 
 const albumCollection = []
-let id = 0
 
 const client_id = '25f611c5f3c943859cbd0273dc5f5cdf'
 const client_secret = '9fd49940d34a471d8aa9bed840397fcb' //need to find out how to hide this
@@ -75,7 +74,7 @@ app.get('/collection', (request, response)=>{
 app.post('/collection', (request, response)=>{
   const addedAlbum = request.body
   if(addedAlbum.album_type){
-      tasks.push(addedAlbum)
+      albumCollection.push(addedAlbum)
       response.json(addedAlbum)
   } else {
       response.status(422).json({error: "album info required"})
