@@ -7,11 +7,11 @@ const Navbar = () => {
     <>
         <nav className='navbar'>
           <span className="logo">WM</span>
-          <span>
+          <span id="nav-links">
             <Link to="/" className='link'>Home</Link> | 
-            <Link to="/Collection" className='link'>Collection</Link> |
-            <Link to="/Add" className='link'>Search</Link> | 
-            <Link to="/Contact" className='link'>Contact</Link>
+            <Link to="/collection" className='link'>Collection</Link> |
+            <Link to="/search" className='link'>Search</Link> | 
+            <Link to="/contact" className='link'>Contact</Link>
           </span>
         </nav>
     </>

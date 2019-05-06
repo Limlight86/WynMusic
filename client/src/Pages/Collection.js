@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios';
 import "./Collection.css"
 import { Link } from 'react-router-dom'
-import Navbar from '../components/Navbar'
 
 class Collection extends React.Component {
 
@@ -14,8 +13,6 @@ class Collection extends React.Component {
 
   render(){
       return(
-        <>
-        <Navbar/>
     <div id="collection">
       <h1>This is the collection page</h1>
       <div id="collection-body">
@@ -35,7 +32,6 @@ class Collection extends React.Component {
         </table>
       </div>
     </div>
-    </>
   )
     }
 }

@@ -1,0 +1,14 @@
+img{
+    width: 400px;
+    height: 400px;
+}
+.track{
+    display: grid;
+    display: -webkit-inline-box;
+    padding: 5px;
+    
+}
+
+.detail-a{
+    color: red;
+}

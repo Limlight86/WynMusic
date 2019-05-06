@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import './home.css'
 import { Link } from 'react-router-dom'
+import "./Home.css"
+import Navbar from '../components/Navbar'
 
 const Home = () => {
   return(
@@ -14,7 +14,6 @@ const Home = () => {
     </div>
     </div>
   )
-}
-
+ }
 
 export default Home

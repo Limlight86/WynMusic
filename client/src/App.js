@@ -1,22 +1,27 @@
 import React from 'react'
-import './App.css'
-import Home from './pages/Home'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Add from './pages/Add'
+import './App.css'
+import SearchAlbum from './pages/SearchAlbum'
+import AlbumDetails from './pages/AlbumDetails'
+import Home from './pages/Home'
 import Collection from './pages/Collection'
-import Contact from './pages/Contact';
+import Contact from './pages/Contact'
 
-const App = () => {
-  return (
-    <BrowserRouter>
+
+class App extends React.Component {
+  render(){
+    return (
+      <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/Collection" component={Collection} />
-        <Route exact path="/add" component={Add} />
-        <Route exact path="/Contact" component={Contact} />
+        <Route exact path="/" component={Home}/>
+        <Route path="/search" component={SearchAlbum} />
+        <Route path="/album/detail" component={AlbumDetails}/>
+        <Route path="/collection" component={Collection}/>
+        <Route path="/contact" component={Contact}/>
       </Switch>
     </BrowserRouter>
-  )
+    )
+  }
 }
 
 export default App

@@ -5,17 +5,87 @@ if (process.env.NODE_ENV !== 'production') {
 const express = require("express")
 const path = require("path")
 const app = express()
+app.use(express.json())
+app.use(express.static('public'))
+const req = require('request') //required request to perform http requests to the api, named req because there are more than 1 request param/variable
 
-// JUST FOR DEMO PURPOSES, PUT YOUR ACTUAL API CODE HERE
-app.get('/api/demo', (request, response) => {
-  response.json({
-    message: "Hello from server.js"
-  })
+const albumCollection = []
+
+const client_id = '25f611c5f3c943859cbd0273dc5f5cdf'
+const client_secret = '9fd49940d34a471d8aa9bed840397fcb' //need to find out how to hide this
+
+let authOptions = { //this object exsists just to set the token for use in the code below
+  url: 'https://accounts.spotify.com/api/token',
+  headers: {
+    'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) //these are headers, like in postman
+  },
+  form: {
+    grant_type: 'client_credentials'
+  },
+  json: true
+}
+
+app.get('/search/:query', (request, res) => { //this is using the express server to ping the spotify demo to get the requested JSON info, using the token - for SEARCH page
+  
+  req.post(authOptions, function(error, response, body) {
+    if (!error && response.statusCode === 200) {
+  
+      var token = body.access_token;
+      var options = {
+        url: `https://api.spotify.com/v1/search?q=${request.params.query}&type=album&limit=50`,
+        headers: {
+          'Authorization': 'Bearer ' + token
+        },
+        json: true
+      };
+      req.get(options, function(error, response, body) {
+          res.json(body.albums.items)
+      });
+    }
+  });
 })
-// END DEMO
+
+  app.get('/album/detail/:id', (request, res) => { //this is the GET for DETAILS page
+  
+    req.post(authOptions, function(error, response, body) {
+      if (!error && response.statusCode === 200) {
+    
+        var token = body.access_token;
+        var options = {
+          url: `https://api.spotify.com/v1/albums/${request.params.id}`,
+          headers: {
+            'Authorization': 'Bearer ' + token
+          },
+          json: true
+        };
+        req.get(options, function(error, response, body) {
+            res.json(body)
+        });
+      }
+    });
+})
+
+//////////////////////////////////CODE for building your collection//////////////////////////////
+
+app.get('/collection', (request, response)=>{
+  response.json(albumCollection)
+})
+
+app.post('/collection', (request, response)=>{
+  const addedAlbum = request.body
+  if(addedAlbum.album_type){
+      albumCollection.push(addedAlbum)
+      response.json(addedAlbum)
+  } else {
+      response.status(422).json({error: "album info required"})
+}})
+
+//////////////////////////////////CODE for building your collection//////////////////////////////
+
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
+  
   app.use(express.static(path.join(__dirname, 'client/build')))
   // Handle React routing, return all requests to React app
   app.get('*', (request, response) => {
