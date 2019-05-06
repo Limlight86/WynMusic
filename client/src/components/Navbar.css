@@ -1,0 +1,27 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: whitesmoke;
+    height: 25px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+    color: red;
+}
+
+.logo{
+    margin-left: 25px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 30px;
+
+}
+.link{
+    color: black;
+    text-decoration: none;
+    margin-right: 13px;
+    margin-left: 13px;
+}
+

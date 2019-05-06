@@ -1,0 +1,10 @@
+.name{
+    height: 2rem;
+    border: 3px solid rgb(211, 23, 23);
+}
+
+.input{
+    margin-left: 5px;
+    font-size: 20px;
+    height: 1.5rem;
+}
