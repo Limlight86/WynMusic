@@ -1,14 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "./Home.css"
+import Navbar from '../components/Navbar'
 
 const Home = () => {
   return(
     <div id="home">
-      <h1>Hello from the Home Page</h1>
-      <button className="search-now"><Link className="search-now" to={`/search`} target="_blank">Search Now!</Link></button>
+    <div className="home">
+      <Navbar/>
+      <h1 className='welcomeText'>Welcome to <span className='page'>WynMusic</span></h1>
+      <h3>?????????</h3>
+      <Link to="/Collection"><button className="button">Start Collection</button></Link>
+    </div>
     </div>
   )
-}
+ }
 
 export default Home

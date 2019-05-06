@@ -48,7 +48,7 @@ margin-top: 0 auto;
     outline: none;
   }
 
-    span{
+    #button-span{
     display: grid;
     place-items: center;
     grid-template-columns: repeat(2, 1fr);

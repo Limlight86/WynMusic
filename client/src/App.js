@@ -5,6 +5,8 @@ import SearchAlbum from './pages/SearchAlbum'
 import AlbumDetails from './pages/AlbumDetails'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
+import Contact from './pages/Contact'
+
 
 class App extends React.Component {
   render(){
@@ -15,6 +17,7 @@ class App extends React.Component {
         <Route path="/search" component={SearchAlbum} />
         <Route path="/album/detail" component={AlbumDetails}/>
         <Route path="/collection" component={Collection}/>
+        <Route path="/contact" component={Contact}/>
       </Switch>
     </BrowserRouter>
     )
