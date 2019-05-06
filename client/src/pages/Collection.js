@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios';
-import "./Collection.css"
+import "./collection.css"
 import { Link } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
