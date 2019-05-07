@@ -11,8 +11,8 @@ const req = require('request') //required request to perform http requests to th
 
 const albumCollection = []
 
-const client_id = '25f611c5f3c943859cbd0273dc5f5cdf'
-const client_secret = '9fd49940d34a471d8aa9bed840397fcb' //need to find out how to hide this
+const client_id = process.env.CLIENT_ID
+const client_secret = process.env.CLIENT_SECRET
 
 let authOptions = { //this object exsists just to set the token for use in the code below
   url: 'https://accounts.spotify.com/api/token',
