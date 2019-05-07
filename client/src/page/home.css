@@ -12,20 +12,27 @@ body{
 }
 
 .button{
-    height: 40px;
-    width: 160px;
+    height: 80px;
+    width: 200px;
     border-radius: 5px;
     background-color: red;
-    font-size: 20px;
+    font-size: 25px;
     color:white;
-    margin-top: 45vh;
+    margin-top: 10vh;
     shape-margin: 50px;
     cursor: pointer;
+    outline: none;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.button:hover{
+    transform: scale(1.1);
+    transition: 500ms;
 }
 
 .welcomeText{
     font-family: 'Kaushan Script', cursive;
-    font-size: 60px;
+    font-size: 80px;
 }
 
 .page{
@@ -34,4 +41,9 @@ body{
 
 .search-now{
     color: black
+}
+
+.introduction{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 50px;
 }
