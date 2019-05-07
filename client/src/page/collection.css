@@ -1,4 +1,59 @@
+#collection-header{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 48px
+}
+
+#wm-collection{
+  color: red
+}
+
+table{
+  margin: 50px 200px 50px 250px;
+  font-size: 20px;
+}
+
 .album-cover-collection{
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+}
+
+#collection-image{
+  width: 200px;
+}
+
+#collection-artist{
+  width: 175px
+}
+#collection-album{
+  width: 575px;
+}
+
+#collection-button{
+  margin-top: 10px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-right: 5px;
+    border-color: red;
+    padding: 5px 10px;
+    line-height: 10px;
+    cursor: pointer;
+}
+
+#button-column{
+  padding-right: 60px
+}
+
+tr{
+  word-wrap: break-word;
+}
+
+tr:hover{
+  background-color: rgba(245, 245, 245, 0.3);
+}
+
+table, td, th{
+  border-collapse: collapse;
 }
