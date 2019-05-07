@@ -7,8 +7,8 @@ class AlbumDetails extends Component {
   state = { album: {} }
 
   componentDidMount(){
-    const id = this.props.location.search.slice(4)
-    axios.get(`/album/detail/${id}`)
+    const id = this.props.match.params.id
+    axios.get(`/api/albums/${id}`)
       .then(res => this.setState({ album:  res.data }))
   }
 
