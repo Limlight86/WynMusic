@@ -9,7 +9,7 @@ class Collection extends React.Component {
     state = { albums: [] }
 
     componentDidMount(){
-      axios.get(`/collection`).then(res => this.setState({ albums:  res.data }))
+      axios.get(`/api/collection`).then(res => this.setState({ albums:  res.data }))
     }
 
   render(){
@@ -27,7 +27,7 @@ class Collection extends React.Component {
                   <td id="collection-image">{album.images && <img src={album.images[2].url} className="album-cover-collection" alt='album img' />}</td>
                   <td id="collection-artist">{album.artists && album.artists[0].name}</td>
                   <td id="collection-album">{album.name}</td>
-                  <td id="button-column"><button id="collection-button"><Link to={`/album/detail/?id=${album.id}`} target="_blank">Details</Link></button></td>
+                  <td id="button-column"><button id="collection-button"><Link to={`/albums/${album.id}`} target="_blank">Details</Link></button></td>
                 </tr>
               ))
             }

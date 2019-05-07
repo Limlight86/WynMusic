@@ -12,11 +12,11 @@ class SearchAlbum extends Component {
           }
 
   componentDidMount(){
-    axios.get('/collection').then(response => this.setState({collection: response.data}))
+    axios.get('/api/collection').then(response => this.setState({collection: response.data}))
   }
 
   fetchAlbums = (event) => {
-    fetch(`/search/${event.target.value}`)
+    fetch(`/api/search/${event.target.value}`)
       .then(response => response && response.json())
       .then(albums => {
         this.setState({ albums: albums })
@@ -24,7 +24,7 @@ class SearchAlbum extends Component {
   }
 
   addCollection = (album) =>{
-                axios.post('/collection', album)
+                axios.post('/api/collection', album)
                   .then(response => {
                     const { collection } = this.state
                     collection.push(response.data)
@@ -61,7 +61,7 @@ class SearchAlbum extends Component {
                         Add
                       </button>
                     }
-                    <button><Link to={`/album/detail/?id=${album.id}`} target="_blank">Details</Link></button>
+                    <button><Link to={`/albums/${album.id}`} target="_blank">Details</Link></button>
                     </span>
                   </div>
               )

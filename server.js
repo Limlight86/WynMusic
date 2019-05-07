@@ -25,11 +25,11 @@ let authOptions = { //this object exsists just to set the token for use in the c
   json: true
 }
 
-app.get('/search/:query', (request, res) => { //this is using the express server to ping the spotify demo to get the requested JSON info, using the token - for SEARCH page
-  
+app.get('/api/search/:query', (request, res) => { //this is using the express server to ping the spotify demo to get the requested JSON info, using the token - for SEARCH page
+
   req.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
-  
+
       var token = body.access_token;
       var options = {
         url: `https://api.spotify.com/v1/search?q=${request.params.query}&type=album&limit=50`,
@@ -45,7 +45,7 @@ app.get('/search/:query', (request, res) => { //this is using the express server
   });
 })
 
-  app.get('/album/detail/:id', (request, res) => { //this is the GET for DETAILS page
+  app.get('/api/albums/:id', (request, res) => { //this is the GET for DETAILS page
   
     req.post(authOptions, function(error, response, body) {
       if (!error && response.statusCode === 200) {
@@ -67,11 +67,11 @@ app.get('/search/:query', (request, res) => { //this is using the express server
 
 //////////////////////////////////CODE for building your collection//////////////////////////////
 
-app.get('/collection', (request, response)=>{
+app.get('/api/collection', (request, response)=>{
   response.json(albumCollection)
 })
 
-app.post('/collection', (request, response)=>{
+app.post('/api/collection', (request, response)=>{
   const addedAlbum = request.body
   if(addedAlbum.album_type){
       albumCollection.push(addedAlbum)
