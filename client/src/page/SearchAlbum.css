@@ -1,5 +1,6 @@
 h1{
   text-align: center;
+  font-family: 'Kaushan Script', cursive;
 }
 
 input{
@@ -37,13 +38,13 @@ margin-top: 0 auto;
 
   #search-button{
     border-radius: 10px;
-    width: 200px;
-    height: 20px;
-    font-size: 16px;
+    width: 400px;
+    height: 40px;
+    font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
-
-  }
+    padding-left: 10px;
+}
   textarea:focus, input:focus{
     outline: none;
   }

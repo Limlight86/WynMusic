@@ -32,6 +32,18 @@ class SearchAlbum extends Component {
                   })
   }
 
+  deleteAlbum = (id) =>{
+    axios.delete(`/api/collection/${id}`)
+    .then(response => {
+       if(response.status === 202){
+        let {collection} = this.state
+        collection = collection.filter(album => album.id !== id)
+        this.setState({collection})
+       }
+    })
+    .catch(err => console.log(err))    
+}
+
   handleKeyDown = (e) => {
     if (e.key === 'Enter' && e.target.value.length > 0) {
       this.setState({artistName : e.target.value})
@@ -43,9 +55,9 @@ class SearchAlbum extends Component {
     return(
       <React.Fragment>
         <Navbar/>
-        <h1>{ this.state.artistName.length ? 'Search results for "' + this.state.artistName + '"' : 'Search for Albums' } </h1>
+        <h1>{ this.state.artistName.length ? 'Search results for "' + this.state.artistName + '"' : 'Search for Albums by Artist' } </h1>
         <input id="search-button" type="text" onKeyDown={this.handleKeyDown}
-        autocomplete="off"/>
+        autoComplete="off"/>
         <div id="results">
           {
             this.state.albums.map((album, i) => {
@@ -56,10 +68,10 @@ class SearchAlbum extends Component {
                     <span id="button-span">
                       {console.log(album)}
                     {
-                      !this.state.collection.map(album => album.id).includes(album.id) &&
+                      !this.state.collection.map(album => album.id).includes(album.id) ?
                       <button onClick={ () => { this.addCollection(album) }}>
                         Add
-                      </button>
+                      </button> : <button onClick={() => this.deleteAlbum(album.id)}>Remove</button>
                     }
                     <button><Link to={`/albums/${album.id}`} target="_blank">Details</Link></button>
                     </span>
