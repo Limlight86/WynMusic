@@ -41,6 +41,7 @@ table{
     padding: 5px 10px;
     line-height: 10px;
     cursor: pointer;
+    outline: none;
 }
 
 #button-column{
