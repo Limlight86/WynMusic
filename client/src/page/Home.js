@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import "./home.css"
 import Navbar from '../components/Navbar'
 
-const Home = () => {
+ const Home = (props) => {
   return(
     <div id="home">
     <div className="home">
-      <Navbar/>
+      <Navbar currentPath={props.match.path}/>
       <h1 className='welcomeText'>Welcome to <span className='page'>WynMusic</span></h1>
       <h3 className='introduction'>Track and Explore your Record Collection today!</h3>
 

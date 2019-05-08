@@ -16,6 +16,10 @@
     color: red;
 }
 
+.link.active{
+    color: red;
+}
+
 .logo{
     margin-left: 160px;
     font-family: 'Kaushan Script', cursive;

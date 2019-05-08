@@ -1,6 +1,7 @@
 #collection-header{
   font-family: 'Kaushan Script', cursive;
-  font-size: 48px
+  font-size: 48px;
+  margin-top: 80px;
 }
 
 #wm-collection{
@@ -40,6 +41,7 @@ table{
     padding: 5px 10px;
     line-height: 10px;
     cursor: pointer;
+    outline: none;
 }
 
 #button-column{

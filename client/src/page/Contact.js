@@ -8,6 +8,7 @@ const Contact = (props) => {
 
 
 
+
         <Navbar currentPath={props.match.path}/>
 
 
@@ -34,6 +35,8 @@ const Contact = (props) => {
           <button type="submit" className="submitButton">Send</button>
           <button type="reset" className="resetButton">Reset</button>
         </form>
+
+
       </div>
     )
   }

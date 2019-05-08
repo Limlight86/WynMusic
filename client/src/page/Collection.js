@@ -27,7 +27,7 @@ class Collection extends React.Component {
   render(){
       return(
         <>
-        <Navbar/>
+        <Navbar currentPath={this.props.match.path}/>
     <div id="collection">
       <h1 id="collection-header">My <span id="wm-collection">WynMusic</span> Collection</h1>
            {
@@ -43,7 +43,17 @@ class Collection extends React.Component {
         <table draggable="false">
           <tbody>
             {
-              this.state.albums.map(album => (
+              this.state.albums.sort((a,b) => {
+                  if (!a.artists || !a.artists[0] || !a.artists[0].name || !b.artists || !b.artists[0] || !b.artists[0].name){
+                    return 0
+                  }else if(a.artists[0].name.toLowerCase() < b.artists[0].name.toLowerCase()){
+                    return -1
+                  }else if(a.artists[0].name.toLowerCase() > b.artists[0].name.toLowerCase()){
+                    return 1
+                  }else{
+                    return 0
+                  }
+                }).map(album => (
                 <tr id="album-row">
                   <td id="collection-image">{album.images && <img src={album.images[2].url}             className="album-cover-collection" alt='album img' />}</td>
                   <td id="collection-artist">{album.artists && album.artists[0].name}</td>

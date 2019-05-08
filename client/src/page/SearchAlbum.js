@@ -54,7 +54,7 @@ class SearchAlbum extends Component {
   render(){
     return(
       <React.Fragment>
-        <Navbar/>
+        <Navbar currentPath={this.props.match.path}/>
         <h1>{ this.state.artistName.length ? 'Search results for "' + this.state.artistName + '"' : 'Search for Albums by Artist or Album name' } </h1>
         <input id="search-button" type="text" onKeyDown={this.handleKeyDown}
         autoComplete="off"/>
