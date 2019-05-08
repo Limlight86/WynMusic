@@ -1,73 +1,77 @@
-h1{
+h1 {
   text-align: center;
   font-family: 'Kaushan Script', cursive;
 }
 
-input{
-margin-top: 0 auto;
+input {
+  margin-top: 0 auto;
 }
 
-#results{
+#results {
   width: 80%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 10px;
-    margin: 0 auto;
-  }
-  
-  .album{
-    display: grid;
-    place-items: center;
-  }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  margin: 0 auto 20px auto;
+}
 
-.album h4{
+.album {
+  display: grid;
+  place-items: center;
+}
+
+.album h4 {
   text-align: center;
 }
-  
-  .album img {
-    object-fit: cover;
-    width: 150px;
-    height: 150px
-  }
 
-  body{
-    background-color: gray;
-    color: white;
-    text-align: center;
-  }
-
-  #search-button{
-    border-radius: 10px;
-    width: 400px;
-    height: 40px;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding-left: 10px;
+.album img {
+  object-fit: cover;
+  width: 150px;
+  height: 150px
 }
-  textarea:focus, input:focus{
-    outline: none;
-  }
 
-    #button-span{
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    }
-  span button{
-    margin-top: 10px;
-    background-color: red;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-    margin-right: 5px;
-    border-color: red;
-    padding: 5px 10px;
-    line-height: 10px;
-    cursor: pointer;
-  }
+body {
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
 
-  a{
-    text-decoration: none;
-    color: white;
-  }
+#search-button {
+  border-radius: 10px;
+  width: 400px;
+  height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-left: 10px;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+#button-span {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+span button {
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-right: 5px;
+  border-color: red;
+  padding: 5px 10px;
+  line-height: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
