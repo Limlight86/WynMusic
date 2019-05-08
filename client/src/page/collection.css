@@ -8,7 +8,7 @@
 }
 
 table{
-  margin: 50px 200px 50px 250px;
+  margin: auto;
   font-size: 20px;
 }
 
@@ -29,7 +29,7 @@ table{
   width: 575px;
 }
 
-#collection-button{
+.collection-button{
   margin-top: 10px;
     background-color: red;
     color: white;
@@ -43,7 +43,11 @@ table{
 }
 
 #button-column{
-  padding-right: 60px
+  padding-right: 15px
+}
+
+#remove-column{
+  padding-right: 35px
 }
 
 tr{
@@ -56,4 +60,24 @@ tr:hover{
 
 table, td, th{
   border-collapse: collapse;
+}
+
+#search-collection{
+    height: 60px;
+    width: 250px;
+    border-radius: 5px;
+    background-color: red;
+    font-size: 25px;
+    color:white;
+    margin-top: 10vh;
+    shape-margin: 50px;
+    cursor: pointer;
+    outline: none;
+    font-family: 'Kaushan Script', cursive;
+}
+
+#empty-message{
+  font-size: 36px;
+  font-family: 'Kaushan Script', cursive;
+  margin: 60px 0 40px 0
 }
