@@ -19,10 +19,9 @@ class AlbumDetails extends Component {
    }
 
   render(){
-    console.log(this.state.album)
     return(
       <>
-      <Navbar/>
+      <Navbar currentPath={this.props.match.path}/>
         <h1>{this.state.album.artists && this.state.album.artists[0].name} - {this.state.album.name}</h1>
         {this.state.album.images && <img src={this.state.album.images[0].url} alt='album img' />} 
         <p> Label: {this.state.album.label}</p>

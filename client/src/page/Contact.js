@@ -1,11 +1,11 @@
 import './Contact.css'
 import React from 'react'
 import Navbar from '../components/Navbar'
-const Contact = () => {
+const Contact = (props) => {
     return(
       
       <div id="contact">
-        <Navbar/>
+        <Navbar currentPath={props.match.path}/>
         <h1 className='welcomeText'><span className='page'>Contact page</span></h1>
         <div className="name">
           <label to="input">Full Name</label>
