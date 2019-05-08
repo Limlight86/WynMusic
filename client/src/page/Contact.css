@@ -44,6 +44,7 @@
     padding: 5px 20px;
     line-height: 20px;
     cursor: pointer;
+    outline: none;
 }
 
 .resetButton{
@@ -57,4 +58,5 @@
     padding: 5px 20px;
     line-height: 20px;
     cursor: pointer;
+    outline: none;
 }
