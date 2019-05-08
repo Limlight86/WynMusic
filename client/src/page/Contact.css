@@ -1,10 +1,60 @@
-.name{
-    height: 2rem;
-    border: 3px solid rgb(211, 23, 23);
-}
 
 .input{
     margin-left: 5px;
     font-size: 20px;
     height: 1.5rem;
+}
+
+.contact{
+    font-size: 2.5rem;
+    margin-top: 90px;
+}
+
+.name.input{
+    height: 15px;
+    width: 300px;
+}
+
+.email.input{
+    height: 15px;
+    width: 300px;
+    margin-top: 0px;
+}
+
+.message.input{
+    height: 20vh;
+    width: 300px;
+    margin-top: 0px;
+    font-size: 15px;
+}
+
+.input{
+    margin-bottom: 25px;
+    resize: none;
+}
+
+.submitButton{
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-right: 5px;
+    border-color: red;
+    padding: 5px 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.resetButton{
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-right: 5px;
+    border-color: red;
+    padding: 5px 20px;
+    line-height: 20px;
+    cursor: pointer;
 }
