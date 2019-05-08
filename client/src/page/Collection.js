@@ -27,7 +27,7 @@ class Collection extends React.Component {
   render(){
       return(
         <>
-        <Navbar/>
+        <Navbar currentPath={this.props.match.path}/>
     <div id="collection">
       <h1 id="collection-header">My <span id="wm-collection">WynMusic</span> Collection</h1>
            {
