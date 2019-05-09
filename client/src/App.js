@@ -7,7 +7,6 @@ import Home from './page/Home'
 import Collection from './page/Collection'
 import Contact from './page/Contact'
 
-
 class App extends React.Component {
   render(){
     return (

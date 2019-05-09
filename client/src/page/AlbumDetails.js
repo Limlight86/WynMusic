@@ -35,7 +35,7 @@ class AlbumDetails extends Component {
               </div>
             )
         })}
-        <p><a className="detail-a" href = {this.state.album.artists && 
+        <p className="detail-bot"><a className="detail-a" href = {this.state.album.artists && 
           this.state.album.artists[0].external_urls.spotify}>
           Visit {this.state.album.artists && this.state.album.artists[0].name}'s Spotify Page</a></p>
       </>
