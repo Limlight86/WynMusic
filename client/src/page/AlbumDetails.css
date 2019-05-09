@@ -12,3 +12,10 @@ img{
 .detail-a{
     color: red;
 }
+
+.detail-bot{
+padding-bottom: 200px;
+font-size: 24px;
+text-decoration: underline;
+
+}
