@@ -10,7 +10,6 @@ app.use(express.static('public'))
 const req = require('request') //required request to perform http requests to the api, named req because there are more than 1 request param/variable
 
 const albumCollection = []
-let removeId = 0
 
 const client_id = process.env.CLIENT_ID
 const client_secret = process.env.CLIENT_SECRET
@@ -38,12 +37,12 @@ app.get('/api/search/:query', (request, res) => { //this is using the express se
           'Authorization': 'Bearer ' + token
         },
         json: true
-      };
+      }
       req.get(options, function (error, response, body) {
         res.json(body.albums.items)
-      });
+      })
     }
-  });
+  })
 })
 
 app.get('/api/albums/:id', (request, res) => { //this is the GET for DETAILS page
@@ -58,12 +57,12 @@ app.get('/api/albums/:id', (request, res) => { //this is the GET for DETAILS pag
           'Authorization': 'Bearer ' + token
         },
         json: true
-      };
+      }
       req.get(options, function (error, response, body) {
         res.json(body)
-      });
+      })
     }
-  });
+  })
 })
 
 //////////////////////////////////CODE for building / deleting your collection//////////////////////////////
@@ -79,7 +78,7 @@ app.post('/api/collection', (request, response) => {
     response.json(addedAlbum)
   } else {
     response.status(422).json({
-      error: "album info required"
+    error: "album info required"
     })
   }
 })

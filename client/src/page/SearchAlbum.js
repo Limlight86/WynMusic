@@ -24,12 +24,12 @@ class SearchAlbum extends Component {
   }
 
   addCollection = (album) =>{
-                axios.post('/api/collection', album)
-                  .then(response => {
-                    const { collection } = this.state
-                    collection.push(response.data)
-                    this.setState({ collection })
-                  })
+    axios.post('/api/collection', album)
+      .then(response => {
+        const { collection } = this.state
+        collection.push(response.data)
+        this.setState({ collection })
+      })
   }
 
   deleteAlbum = (id) =>{
@@ -56,8 +56,7 @@ class SearchAlbum extends Component {
       <React.Fragment>
         <Navbar currentPath={this.props.match.path}/>
         <h1>{ this.state.artistName.length ? 'Search results for "' + this.state.artistName + '"' : 'Search for Albums by Artist or Album name' } </h1>
-        <input id="search-button" type="text" onKeyDown={this.handleKeyDown}
-        autoComplete="off"/>
+        <input id="search-button" type="text" onKeyDown={this.handleKeyDown} autoComplete="off"/>
         <div id="results">
           {
             this.state.albums.map((album, i) => {
@@ -66,18 +65,15 @@ class SearchAlbum extends Component {
                     <h4>{album.name}</h4>
                     <img src={album.images[1].url} alt="album-art"/>
                     <span id="button-span">
-                      {console.log(album)}
                     {
                       !this.state.collection.map(album => album.id).includes(album.id) ?
-                      <button onClick={ () => { this.addCollection(album) }}>
-                        Add
-                      </button> : <button onClick={() => this.deleteAlbum(album.id)}>Remove</button>
+                      <button onClick={ () => { this.addCollection(album) }}>Add</button> : 
+                      <button onClick={() => this.deleteAlbum(album.id)}>Remove</button>
                     }
                     <button><Link to={`/albums/${album.id}`} target="_blank">Details</Link></button>
                     </span>
                   </div>
-              )
-            })
+                  )})
           }
         </div>
       </React.Fragment>

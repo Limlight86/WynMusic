@@ -1,84 +1,85 @@
-#collection-header{
+#collection-header {
   font-family: 'Kaushan Script', cursive;
   font-size: 48px;
   margin-top: 80px;
 }
 
-#wm-collection{
+#wm-collection {
   color: red
 }
 
-table{
+table {
   margin: auto;
   font-size: 20px;
 }
 
-.album-cover-collection{
+.album-cover-collection {
   width: 80px;
   height: 80px;
   margin: 5px;
 }
 
-#collection-image{
+#collection-image {
   width: 200px;
 }
 
-#collection-artist{
+#collection-artist {
   width: 175px
 }
-#collection-album{
+
+#collection-album {
   width: 575px;
 }
 
-.collection-button{
+.collection-button {
   margin-top: 10px;
-    background-color: red;
-    color: white;
-    font-weight: bold;
-    border-radius: 10px;
-    margin-right: 5px;
-    border-color: red;
-    padding: 5px 10px;
-    line-height: 10px;
-    cursor: pointer;
-    outline: none;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-right: 5px;
+  border-color: red;
+  padding: 5px 10px;
+  line-height: 10px;
+  cursor: pointer;
+  outline: none;
 }
 
-#button-column{
+#button-column {
   padding-right: 15px
 }
 
-#remove-column{
+#remove-column {
   padding-right: 35px
 }
 
-tr{
+tr {
   word-wrap: break-word;
 }
 
-tr:hover{
+tr:hover {
   background-color: rgba(245, 245, 245, 0.3);
 }
 
-table, td, th{
+table,td,th {
   border-collapse: collapse;
 }
 
-#search-collection{
-    height: 60px;
-    width: 250px;
-    border-radius: 5px;
-    background-color: red;
-    font-size: 25px;
-    color:white;
-    margin-top: 10vh;
-    shape-margin: 50px;
-    cursor: pointer;
-    outline: none;
-    font-family: 'Kaushan Script', cursive;
+#search-collection {
+  height: 60px;
+  width: 250px;
+  border-radius: 5px;
+  background-color: red;
+  font-size: 25px;
+  color: white;
+  margin-top: 10vh;
+  shape-margin: 50px;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Kaushan Script', cursive;
 }
 
-#empty-message{
+#empty-message {
   font-size: 36px;
   font-family: 'Kaushan Script', cursive;
   margin: 60px 0 40px 0
