@@ -1,4 +1,4 @@
-body{
+body {
     height: 85vh;
     width: 100vw;
     background-image: url(musicBack.jpg);
@@ -11,13 +11,13 @@ body{
     text-align: center;
 }
 
-.button{
+.button {
     height: 80px;
     width: 200px;
     border-radius: 5px;
     background-color: red;
     font-size: 25px;
-    color:white;
+    color: white;
     margin-top: 10vh;
     shape-margin: 50px;
     cursor: pointer;
@@ -25,26 +25,26 @@ body{
     font-family: 'Kaushan Script', cursive;
 }
 
-.button:hover{
+.button:hover {
     transform: scale(1.1);
     transition: 500ms;
 }
 
-.welcomeText{
+.welcomeText {
     font-family: 'Kaushan Script', cursive;
     font-size: 80px;
     margin-top: 100px;
 }
 
-.page{
+.page {
     color: red;
 }
 
-.search-now{
+.search-now {
     color: black
 }
 
-.introduction{
+.introduction {
     font-family: 'Kaushan Script', cursive;
     font-size: 50px;
 }

@@ -1,21 +1,20 @@
-img{
+img {
     width: 400px;
     height: 400px;
 }
-.track{
+
+.track {
     display: grid;
     display: -webkit-inline-box;
     padding: 5px;
-    
 }
 
-.detail-a{
+.detail-a {
     color: red;
 }
 
-.detail-bot{
-padding-bottom: 200px;
-font-size: 24px;
-text-decoration: underline;
-
+.detail-bot {
+    padding-bottom: 200px;
+    font-size: 24px;
+    text-decoration: underline;
 }

@@ -28,9 +28,9 @@ class Collection extends React.Component {
       return(
         <>
         <Navbar currentPath={this.props.match.path}/>
-    <div id="collection">
-      <h1 id="collection-header">My <span id="wm-collection">WynMusic</span> Collection</h1>
-           {
+          <div id="collection">
+          <h1 id="collection-header">My <span id="wm-collection">WynMusic</span> Collection</h1>
+            {
             !this.state.albums.length && 
             <>
               <div id="empty-message">
@@ -39,10 +39,10 @@ class Collection extends React.Component {
               <Link to="/search"><button id="search-collection">Search for Albums</button></Link>
             </>
             }
-      <div id="collection-body">
-        <table draggable="false">
-          <tbody>
-            {
+        <div id="collection-body">
+          <table draggable="false">
+            <tbody>
+              {
               this.state.albums.sort((a,b) => {
                   if (!a.artists || !a.artists[0] || !a.artists[0].name || !b.artists || !b.artists[0] || !b.artists[0].name){
                     return 0
@@ -53,8 +53,8 @@ class Collection extends React.Component {
                   }else{
                     return 0
                   }
-                }).map(album => (
-                <tr id="album-row">
+                }).map((album, i) => (
+                <tr id="album-row" key={i}>
                   <td id="collection-image">{album.images && <img src={album.images[2].url}             className="album-cover-collection" alt='album img' />}</td>
                   <td id="collection-artist">{album.artists && album.artists[0].name}</td>
                   <td id="collection-album">{album.name}</td>
@@ -68,7 +68,6 @@ class Collection extends React.Component {
       </div>
     </div>
     </>
-  )
-    }
-}
+  )}}
+  
 export default Collection
