@@ -1,3 +1,8 @@
+# visit site here https://wyn-music.herokuapp.com/
+(be patient with free server please)
+
+Midterm project for Wyncode cohort 33. Scored a 96 as per the grading rubric at the bottom of the Read me.
+
 # Node / Create-React-App mashup
 
 ## Setup
